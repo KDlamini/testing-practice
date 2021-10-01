@@ -12,4 +12,10 @@ const reverseString = (string) => {
     return string.split('').reverse().join('');
 }
 
-module.exports = {stringLength, reverseString};
+const capitalize = (string) => {
+    const value = string.charAt(0).toUpperCase() + string.slice(1);
+
+    return value;
+}
+
+module.exports = {stringLength, reverseString, capitalize};

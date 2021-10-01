@@ -2,16 +2,15 @@ const lib = require('./src/index');
 const calculator = require('./src/calculator');
 const stringLength = lib.stringLength;
 const reverseString = lib.reverseString;
+const capitalize = lib.capitalize;
 
 test('length of hello to equal 5', () => {
     expect(stringLength('hello')).toBe(5);
 });
 
 test('count is greater than 1 but not more than 10', () => {
-    const value = stringLength('foo');
-
-    expect(value).toBeGreaterThan(0);
-    expect(value).toBeLessThanOrEqual(10);
+    expect(stringLength('foo')).toBeGreaterThan(0);
+    expect(stringLength('magnetic')).toBeLessThanOrEqual(10);
     expect(() => stringLength('')).toThrow(Error);
     expect(() => stringLength('cosmopolitan')).toThrow(Error);
 });
@@ -74,5 +73,11 @@ describe('multiplication', () => {
 
     test('5 * 5 must equal 25', () => {
       expect(calculator.multiply(5, 5)).toBe(25);
+    });
+});
+
+describe('capitalize string', () => {
+    test('good morning must equal Good morning', () => {
+        expect(capitalize('good morning')).toBe('Good morning');
     });
 });
